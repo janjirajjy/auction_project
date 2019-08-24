@@ -223,7 +223,7 @@ while ($row = mysqli_fetch_array($result)) {
                                                 //     echo "<a href='pay.php?id=$row[auction_id]&act=pay&p=$row[product_price_bid]&do=payform' class='btn btn-warning btn-xs' target='_blank'>ชำระเงิน</a>";
                                                 // }else{
                                               
-                                                   echo "<a href='mb_pay.php?auction_id=$row[auction_id]&act=showslip&p=$row[product_price_bid]&do=payform' class='btn btn-success btn-xs' target='_blank'>เปิดดู</a>";
+                                                   echo "<a href='md_pay_detail.php?auction_id=$row[auction_id]&act=showslip&p=$row[product_price_bid]&do=payform' class='btn btn-success btn-xs' target='_blank'>เปิดดู</a>";
                                               
                                                 
                                                 //}
