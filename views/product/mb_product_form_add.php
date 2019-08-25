@@ -1,8 +1,12 @@
 <?php
 $query = "SELECT * FROM unit" or die("Error:" . mysqli_error());
 $result = mysqli_query($condb, $query);
+
+echo " <style> .center { text-align: ; color: blue;} </style>";
+echo '<h4 class="center">เพิ่มสินค้า</h4> <br> ';
 ?>
-<h4>เพิ่มสินค้า </h4>
+
+
 <form action="mb_product_form_add_db.php" method="post" class="form-horizontal" enctype="multipart/form-data">
     <div class="form-group">
         <div class="col-sm-2 control-label">

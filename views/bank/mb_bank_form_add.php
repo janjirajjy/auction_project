@@ -1,4 +1,9 @@
-<h4> Form เพิ่มธนาคาร </h4>
+
+
+<style>.center { text-align: ; color: blue;} </style>
+<br>
+ <h4 class="center">เพิ่ม</h4> <br> 
+
 <form action="mb_bank_form_add_db.php" method="post" class="form-horizontal">
   <div class="form-group">
     <div class="col-sm-2 control-label">

@@ -7,8 +7,10 @@ INNER JOIN auction as a  ON p.product_id=a.product_id  WHERE p.product_customeri
 ORDER BY p.product_id ASC" 
 or die("Error:" . mysqli_error());
 $result = mysqli_query($condb, $query); 
+ echo " <style> .center { text-align: ; color: blue;} </style>";
+ echo '<h4 class="center">รายการสินค้าที่เปิดประมูล</h4> <br> ';
 
-echo '<h4>รายการสินค้าที่เปิดประมูล</h4>';
+
 echo "<table id='example' class='display table table-bordered table-hover'>";
 //หัวข้อตาราง
 echo "

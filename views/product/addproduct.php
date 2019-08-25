@@ -99,7 +99,7 @@ while ($row = mysqli_fetch_array($result)) {
             <div class="mobile-only-nav pull-right">
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav" id="navlink" style="float:right">
-                    <li><a href="../bank/mb_bank.php">จัดการบัญชี</a></li>
+                        <li><a href="../bank/mb_bank.php">จัดการบัญชี</a></li>
                         <li><a href="../product/addproduct.php">รายการสินค้า</a></li>
                         <li><a href="../mb_bid/mb_bid.php">ประวัติการประมูล</a></li>
                         <li><a href="../cart/mb_cart.php">รถเข็น</a></li>
@@ -132,27 +132,30 @@ while ($row = mysqli_fetch_array($result)) {
 
         </nav>
         <!-- /.navbar-collapse -->
-            <div class="page-wrapper">
-                <div class="container-fluid pt-20">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="panel panel-default card-view">
-                                <div class="panel-heading">
-                                    <div class="pull-left">
-                                        <h5 class="control-label mb-10" for="exampleCountry">รายการสินค้า</h5>
-                                    </div>
-                                    <div class="clearfix"></div>
+        <div class="page-wrapper">
+            <div class="container-fluid pt-20">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-default card-view">
+                            <div class="panel-heading">
+                                <div class="pull-left">
+                                    <h5 class="control-label mb-10" for="exampleCountry">รายการสินค้า</h5>
                                 </div>
-                                <div class="panel-wrapper collapse in">
-                <div class="panel-body">
-                    <div class="mb-20">
-               
-                 <a href="addproduct.php?act=add" class="btn btn-info"> +ข้อมูล </a> 
-                <a href="addproduct.php?act=openlist" class="btn btn-success"> รายเปิดประมูล </a>
-                </div>
-        <div class="col-sm-12">
-                            
-       <?php 
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="panel-wrapper collapse in">
+                                <div class="panel-body">
+                                    <div class="mb-20">
+
+                                        <a href="addproduct.php" class="btn btn-info"> รายการสินค้า </a>
+                                        <a href="addproduct.php?act=openlist" class="btn btn-success"> รายเปิดประมูล
+                                        </a>
+                                        <a href="addproduct.php?act=add" class="btn btn-info"> เพิ่มสินค้า </a>
+                                    </div>
+                                    <div class="col-sm-12">
+
+                                        <?php 
+
        $act = (isset($_GET['act']) ? $_GET['act'] : '');
         if($act=='add'){
           include('mb_product_form_add.php');
@@ -175,15 +178,15 @@ while ($row = mysqli_fetch_array($result)) {
                     </div>
                 </div>
             </div>
-        <div class="col-md-10">
+            <div class="col-md-10">
 
-      </div>
+            </div>
 
 
 
-    </div>
+        </div>
 
-    <!-- /Main Content -->
+        <!-- /Main Content -->
 
     </div>
     <!-- Footer -->
