@@ -22,6 +22,18 @@ $result2 = mysqli_query($condb, $sql) or die ("Error in query: $sql " . mysqli_e
 $row = mysqli_fetch_array($result2);
 extract($row);
 
+if($result){
+	echo "<script type='text/javascript'>";
+	echo "alert('บันทึกข้อมูลสำเร็จ');";
+	echo "window.location = 'addproduct.php'; ";
+	echo "</script>";
+	}else{
+	echo "<script type='text/javascript'>";
+	// echo "alert('Error!!');";
+	echo "window.location = 'addproduct.php'; ";
+	echo "</script>";
+}
+
 ?>
 <h4> แก้ไขสินค้า  </h4>
 <form action="mb_product_form_edit.php" method="post" class="form-horizontal" enctype="multipart/form-data">
@@ -97,3 +109,4 @@ initSample();
 <?php
 mysqli_close($condb);
 ?>
+
