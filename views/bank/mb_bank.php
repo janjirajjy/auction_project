@@ -152,7 +152,10 @@ while ($row = mysqli_fetch_array($result)) {
                                 <div class="panel-wrapper collapse in">
                                     <div class="panel-body">
                                         <div class="col-md-10">
-                                            <h4>
+                                        <h4>
+                                          <a href="mb_bank.php" class="btn btn-primary"> จัดการข้อมูลธนาคาร
+                                                </a>                                       
+                    
                                           <a href="mb_bank.php?act=add" class="btn btn-primary"> เพิ่มข้อมูล
                                                 </a>
                                             </h4>
