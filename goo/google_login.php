@@ -58,6 +58,7 @@ if ($success) {
       $_SESSION["name"] = $user->name;
       $_SESSION["email"] = $user->email;
       $_SESSION["new_user"] = "no";
+      var_dump($_SESSION);exit;
     } else {
       // New user, Insert in database
       // $sql = "INSERT INTO `users` (`name`, `email`) VALUES " . "( :name, :email)";
@@ -82,7 +83,8 @@ if ($success) {
 } else {
   $_SESSION["e_msg"] = $client->error;
 }
-header("location:../member");
+
+header("location:../views/welcome.php");
 exit;
 
 ?>

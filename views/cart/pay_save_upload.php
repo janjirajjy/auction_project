@@ -27,6 +27,7 @@ include('../../condb.php');
 		//คัดลอกไฟล์ไปยังโฟลเดอร์
 		move_uploaded_file($_FILES['slip_file']['tmp_name'],$path_copy);  
 	}
+	// var_dump($auction_id);exit;
 
 			$sql = "UPDATE  orders SET 
 			slip_file='$newname',
@@ -34,6 +35,7 @@ include('../../condb.php');
 			account_id=$account_id
 			WHERE auction_id=$auction_id
 			";
+		
 
 	$result = mysqli_query($condb, $sql) or die ("Error in query: $sql " . mysqli_error());
 
