@@ -142,7 +142,7 @@ while ($row = mysqli_fetch_array($result)) {
                             </div>
                             <br>
                             <div class="mb-20">
-                                <a href="addproduct.php" class="btn btn-info"> รถเข็น </a>
+                                <a href="mb_cart.php" class="btn btn-info"> รถเข็น </a>
                                
                             </div>
                          
