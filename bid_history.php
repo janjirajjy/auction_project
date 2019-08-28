@@ -36,6 +36,7 @@ $resultl = mysqli_query($condb, $sqll);
 $rowl = mysqli_fetch_array($resultl);
 @extract($rowl);
 $cus_name = $rowl['cus_name'];
+$m_id = $_SESSION['cus_id'];
 //echo $sqll;
 //print_r($rowl);
 }
@@ -225,18 +226,18 @@ $cus_name = $rowl['cus_name'];
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="welcome.php">หน้าหลัก</a>
+                <a class="navbar-brand" href="views/welcome.php">หน้าหลัก</a>
 
             </div>
             <div class="mobile-only-nav pull-right">
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav" id="navlink" style="float:right">
-                    <li><a href="../bank/mb_bank.php">จัดการบัญชี</a></li>
-                        <li><a href="../product/addproduct.php">รายการสินค้า</a></li>
-                        <li><a href="../mb_bid/mb_bid.php">ประวัติการประมูล</a></li>
-                        <li><a href="../cart/mb_cart.php">รถเข็น</a></li>
-                        <li><a href="../win.php/">ชนะประมูล</a></li>
-                        <li><a href="../pay/mb_pay.php">สินค้ารอจัดส่ง</a></li>
+                    <li><a href="views/bank/mb_bank.php">จัดการบัญชี</a></li>
+                        <li><a href="views/product/addproduct.php">รายการสินค้า</a></li>
+                        <li><a href="views/mb_bid/mb_bid.php">ประวัติการประมูล</a></li>
+                        <li><a href="views/cart/mb_cart.php">รถเข็น</a></li>
+                        <li><a href="views/win.php/">ชนะประมูล</a></li>
+                        <li><a href="views/pay/mb_pay.php">สินค้ารอจัดส่ง</a></li>
                         <!-- <li><a href="about.php">เกี่ยวกับ</a></li>
                         <li><a href="index.php">ประมูล</a></li>
                         <li><a href="win.php">ชนะประมูล</a></li>
@@ -244,16 +245,16 @@ $cus_name = $rowl['cus_name'];
                         <li><a href="signup.php">สมัครสมาชิก</a></li> -->
 
                         <?php if($m_id!=''){
-               echo '<li><a href="../profile/mb_profile.php">
-               <span class="glyphicon glyphicon-user"> </span>'
-             .' '.$cus_name .' - Profile</a>
-           </li>';
-            echo '<li><a href="logout.php">
+              echo '<li><a href="views/profile/mb_profile.php">
+                <span class="glyphicon glyphicon-user"> </span>'
+              .' '.$cus_name .' - Profile</a>
+            </li>';
+            echo '<li><a href="login_google.php">
               <span class="glyphicon glyphicon-off"> </span>
             Logout</a>
           </li>';
           }else{
-          echo '<li><a href="login.php">
+          echo '<li><a href="login_google.php">
             <span class="glyphicon glyphicon-user"> </span>
           เข้าสู่ระบบ</a>
         </li>';

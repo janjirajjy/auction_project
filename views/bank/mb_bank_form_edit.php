@@ -36,7 +36,31 @@ extract($row);
       ชื่อธนาคาร :
     </div>
     <div class="col-sm-4">
-      <input type="text" name="bank_name" required class="form-control" value="<?php echo $row['bank_name'];?>">
+   
+      <select class="form-control" name="bank_name" data-placeholder="Choose a Category"
+         tabindex="0">
+         <option value="">กรุณาเลือก</option>
+         <option value="ธนาคารกรุงเทพ">ธนาคารกรุงเทพ</option>
+         <option value="ธนาคารกสิกรไทย">ธนาคารกสิกรไทย</option>
+         <option value="ธนาคารกสิกรไทย">ธนาคารกสิกรไทย</option>
+         <option value="ธนาคารกรุงไทย">ธนาคารกรุงไทย</option>
+         <option value="ธนาคารทหารไทย">ธนาคารทหารไทย</option>
+         <option value="ธนาคารไทยพาณิชย์">ธนาคารไทยพาณิชย์</option>
+         <option value="ธนาคารกรุงศรีอยุธยา">ธนาคารกรุงศรีอยุธยา</option>
+         <option value="ธนาคารเกียรตินาคิน">ธนาคารเกียรตินาคิน</option>
+         <option value="ธนาคารซีไอเอ็มบีไทย">ธนาคารซีไอเอ็มบีไทย</option>
+         <option value="ธนาคารทิสโก้">ธนาคารทิสโก้</option>
+         <option value="ธนาคารธนชาต">ธนาคารธนชาต</option>
+         <option value="ธนาคารยูโอบี">ธนาคารยูโอบี</option>
+         <option value="ธนาคารสแตนดาร์ดชาร์เตอร์ด (ไทย)">ธนาคารสแตนดาร์ดชาร์เตอร์ด (ไทย)</option>
+         <option value="ธนาคารไทยเครดิตเพื่อรายย่อย">ธนาคารไทยเครดิตเพื่อรายย่อย</option>
+         <option value="ธนาคารแลนด์ แอนด์ เฮาส์">ธนาคารแลนด์ แอนด์ เฮาส์</option>
+         <option value="ธนาคารไอซีบีซี(ไทย)">ธนาคารไอซีบีซี (ไทย)</option>
+         <option value="ธนาคารออมสิน">ธนาคารออมสิน</option>
+         <option value="ธนาคารอาคารสงเคราะห์">ธนาคารอาคารสงเคราะห์</option>
+         <option value="ธนาคารอิสลามแห่งประเทศไทย">ธนาคารอิสลามแห่งประเทศไทย</option>
+
+      </select>
     </div>
   </div>
   <div class="form-group">

@@ -26,7 +26,7 @@ session_start();
 
                         //echo 'member';
                         
-                        Header("Location: member/");
+                        Header("Location: views/welcome.php");
                       }
 
                       if ($_SESSION["cus_status"]!='ONLINE'){   

@@ -67,7 +67,10 @@ $(document).ready(function(){
 </script>
 <?php 
 if (isset($id)) {
+	$in=0;
         for($i=0;$i<count($id);$i++) {
+			$in++;
+			var_export($in);
         echo  '<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 ">';
         echo '<div class="panel collapse in ">';
         echo   '<div class="panel-body pa-0">';

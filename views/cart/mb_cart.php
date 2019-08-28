@@ -99,7 +99,7 @@ while ($row = mysqli_fetch_array($result)) {
             <div class="mobile-only-nav pull-right">
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav" id="navlink" style="float:right">
-                    <li><a href="../bank/mb_bank.php">จัดการบัญชี</a></li>
+                        <li><a href="../bank/mb_bank.php">จัดการบัญชี</a></li>
                         <li><a href="../product/addproduct.php">รายการสินค้า</a></li>
                         <li><a href="../mb_bid/mb_bid.php">ประวัติการประมูล</a></li>
                         <li><a href="../cart/mb_cart.php">รถเข็น</a></li>
@@ -140,10 +140,15 @@ while ($row = mysqli_fetch_array($result)) {
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
-                     <div class="panel-wrapper collapse in">
-                                <div class="panel-body">
+                            <br>
+                            <div class="mb-20">
+                                <a href="addproduct.php" class="btn btn-info"> รถเข็น </a>
+                               
+                            </div>
+                            <div class="panel-wrapper collapse in">
+                                <!-- <div class="panel-body">
                                     <form action="profile_form_edit_db.php" method="post">
-                                </div>
+                                </div> -->
                                 <?php 
 			 if($cus_id !=''){
 			 	 include('mb_win_list_m.php');
@@ -170,7 +175,7 @@ while ($row = mysqli_fetch_array($result)) {
 
     </div>
     </div>
-   
+
 
     <!-- /Main Content -->
 
@@ -250,7 +255,7 @@ while ($row = mysqli_fetch_array($result)) {
     <!-- Init JavaScript -->
     <script src="../dist/js/init.js"></script>
     <script src="../dist/js/widgets-data.js"></script>
-    
+
 
 </body>
 

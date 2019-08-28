@@ -140,10 +140,16 @@ while ($row = mysqli_fetch_array($result)) {
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
+                            <br>
+                            <div class="mb-20">
+                                <a href="addproduct.php" class="btn btn-info"> รถเข็น </a>
+                               
+                            </div>
+                         
                      <div class="panel-wrapper collapse in">
-                                <div class="panel-body">
-                                    <!-- <form action="profile_form_edit_db.php" method="post"> -->
-                                </div>
+                                <!-- <div class="panel-body">
+                                    <form action="profile_form_edit_db.php" method="post">
+                                </div> -->
                                 <!-- <font color="blue"><?php echo $cus_name;?></font>  -->
 
         <input type="hidden"name="cus_id_add" value="<?php echo $cus_cus_email;?>">
