@@ -12,7 +12,6 @@ $query = "SELECT * FROM unit" or die("Error:" . mysqli_error());
 $result = mysqli_query($condb, $query);
  
 $id=$_GET['ID'];
-var_dump($id);
 $sql = "
 SELECT p.*,u.*
 FROM detailproduct as  p
@@ -26,7 +25,7 @@ extract($row);
 
 ?>
 <h4> แก้ไขสินค้า  </h4>
-<form action="mb_product_form_edit.php" method="post" class="form-horizontal" enctype="multipart/form-data">
+<form action="mb_product_form_edit_db.php" method="post" class="form-horizontal" enctype="multipart/form-data">
   <div class="form-group">
     <div class="col-sm-2 control-label">
       ชื่อสินค้า :
@@ -98,16 +97,6 @@ initSample();
 </script>
 <?php
 mysqli_close($condb);
-// if($result){
-// 	echo "<script type='text/javascript'>";
-// 	echo "alert('บันทึกข้อมูลสำเร็จ');";
-// 	echo "window.location = 'addproduct.php'; ";
-// 	echo "</script>";
-// 	}else{
-// 	echo "<script type='text/javascript'>";
-// 	// echo "alert('Error!!');";
-// 	echo "window.location = 'addproduct.php'; ";
-// 	echo "</script>";
-// }
+
 ?>
 
