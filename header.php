@@ -18,8 +18,8 @@
     </head>
   <body>
  <?php 
- error_reporting( error_reporting() & ~E_NOTICE );
- session_start();
+//  error_reporting( error_reporting() & ~E_NOTICE );
+//  session_start();
 // echo '<pre>';
 // 	print_r($_SESSION);
 // echo '</pre>';

@@ -6,6 +6,12 @@ include('../../condb.php');
 	$auction_id = $_POST["auction_id"];
 	$account_id = $_POST['account_id'];
 	 
+	if ($_POST["auction_id"] !=null || $_POST["auction_id"] != '') {
+		echo "<script type='text/javascript'>";
+		echo "alert('ตรวจสอบข้อมูลหรือติดต่อราค้า');";
+		echo "window.location = 'mb_cart.php'; ";
+		echo "</script>";
+	}
 // exit;
 
    $pay_date = date('Y-m-d H:i:s');
@@ -32,41 +38,36 @@ include('../../condb.php');
 			$sql = "UPDATE  orders SET 
 			slip_file='$newname',
 			pay_date='$pay_date',
-			account_id=$account_id
-			WHERE auction_id=$auction_id
-			";
-		
-
+			account_id=$account_id WHERE auction_id=$auction_id";
+ 
 	$result = mysqli_query($condb, $sql) or die ("Error in query: $sql " . mysqli_error());
 
 	// echo '<pre>';
 	// echo $sql;
 	// echo '</pre>';
 	// exit;
-
-
 		//update status auction pay slip
 		$sql2 = "UPDATE   auction SET 
 		productstatus_id=2
 		WHERE auction_id=$auction_id
 		";
 $result2 = mysqli_query($condb, $sql2) or die ("Error in query: $sql2 " . mysqli_error());
-
-	//ปิดการเชื่อมต่อ database
-	mysqli_close($condb);
-	//จาวาสคริปแสดงข้อความเมื่อบันทึกเสร็จและกระโดดกลับไปหน้าฟอร์ม
+//ปิดการเชื่อมต่อ database
+mysqli_close($condb);
+//จาวาสคริปแสดงข้อความเมื่อบันทึกเสร็จและกระโดดกลับไปหน้าฟอร์ม
 	
 	if($result){
 		echo "<script type='text/javascript'>";
-		//echo "alert('บันทึกข้อมูลสำเร็จ');";
-		echo "window.location = 'cart.php?act=showslip&auction_id=$auction_id'; ";
+		echo "alert('บันทึกข้อมูลสำเร็จ');";
+		echo "window.location = 'mb_cart.php?act=showslip&auction_id=$auction_id'; ";
 		echo "</script>";
 	}else{
 	   	echo "<script type='text/javascript'>";
-	   	//echo "alert('Error!!');";
+	   	echo "alert('Error!!');";
 	   	echo "window.location = 'cart.php?act=showslip&auction_id=$auction_id'; ";
 	   	echo "</script>";
 }
+
 ?>
 
  

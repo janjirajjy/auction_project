@@ -1,26 +1,274 @@
+<?php require('condb.php');?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>เข้าสู่ระบบ</title>
+    <meta name="description" content="Elmer is a Dashboard & Admin Site Responsive Template by hencework." />
+    <meta name="keywords"
+        content="admin, admin dashboard, admin template, cms, crm, Elmer Admin, Elmeradmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
+    <meta name="author" content="hencework" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- vector map CSS -->
+    <link href="vendors/bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
+    <!-- Custom CSS -->
+    <link href="dist/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <?php
+ error_reporting( error_reporting() & ~E_NOTICE );
+ session_start();
+// echo '<pre>';
+// 	print_r($_SESSION);
+// echo '</pre>';
+ $m_id = $_SESSION['cus_id'];
+ $cus_name = $_SESSION['cus_name'];
+ $cus_email =$_SESSION['cus_email'];
+//  var_dump($_SESSION);
+ ?>
 <?php
-include('header.php');
-include('menu.php');
+$sql_update = "UPDATE auction SET auction_status = 1 WHERE (UNIX_TIMESTAMP(auction_end) - UNIX_TIMESTAMP()) < 0";
+$result = mysqli_query($condb, $sql_update); 
+//echo $sql_update;
+$sdate = date('Y-m-d');
+$edate = date('Y-m-d H:i:s');
+//echo $cdate;
+$sql = "SELECT * 
+FROM auction  as a 
+INNER JOIN detailproduct as p ON a.product_id=p.product_id
+WHERE a.auction_status = 0 
+AND '$sdate' >= a.auction_startdate 
+AND '$edate' <= a.auction_end
+ORDER BY UNIX_TIMESTAMP(a.auction_end)";
+$result = mysqli_query($condb, $sql);
+//echo $sql;
+while ($row = mysqli_fetch_array($result)) {
+	$id[] = $row['auction_id'];
+	$name[] = $row['product_name'];
+	$price[] = $row['product_price_bid'];
+	$highest_bidder[] = $row['user_Name'];
+	$date[] = $row['auction_end'];
+	$path[] = $row['product_photo'];
+// var_dump($row);
+	//echo $path;
+}
+
 ?>
-<!-- Include Scripts -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.cycle.lite.min.js"></script>
-<script type="text/javascript" src="js/jquery.pngFix.pack.js"></script>
-<script type="text/javascript" src="js/jquery.color.js"></script>
-<script type="text/javascript" src="js/hoverIntent.js"></script>
-<script type="text/javascript" src="js/superfish.js"></script>
-<script type="text/javascript" src="js/slimbox2.js"></script>
-<script type="text/javascript" src="js/slides.min.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
-<script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui-timepicker-addon.js"></script>
-<script type="text/javascript">
-	setInterval("item_display()", 2000);
+    <div class="wrapper  theme-5-active pimary-color-blue">
+        <!-- Top Menu Items -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+
+            <div class="mobile-only-nav pull-left">
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="welcome.php">หน้าหลัก</a>
+
+            </div>
+            <div class="mobile-only-nav pull-right">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav" id="navlink" style="float:right">
+                        <li><a href="../views/cart/mb_cart.php">รถเข็น</a></li>
+                        <!-- <li><a href="about.php">เกี่ยวกับ</a></li> -->
+                        <!-- <li><a href="index.php">ประมูล</a></li> -->
+                        <li><a href="win.php/">ชนะประมูล</a></li>
+                        <!-- <li><a href="bank.php">การชำระเงิน</a></li> -->
+                        <!-- <li><a href="signup.php">สมัครสมาชิก</a></li> -->
+
+                        <?php if($m_id!=''){
+              echo '<li><a href="../views/profile/mb_profile.php">
+                <span class="glyphicon glyphicon-user"> </span>'
+              .' '.$cus_name .' - Profile</a>
+            </li>';
+            echo '<li><a href="../login_google.php">
+              <span class="glyphicon glyphicon-off"> </span>
+            Logout</a>
+          </li>';
+          }else{
+          echo '<li><a href="../login_google.php">
+            <span class="glyphicon glyphicon-user"> </span>
+          เข้าสู่ระบบ</a>
+        </li>';
+        }?>
+                    </ul>
+                </div>
+
+
+        </nav>
+        <!-- /.navbar-collapse -->
+
+        <div class="page-wrapper">
+            <div class="container-fluid pt-10">
+
+              <div id="itemContain" >
+
+			  <div class="col-md-8">
+							<div class="panel panel-default card-view">
+								<div class="panel-heading">
+									<div class="pull-left">
+										<h6 class="panel-title txt-dark">varying modal content based on trigger button</h6>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div  class="panel-wrapper collapse in">
+									<div  class="panel-body">
+										<p class="text-muted"> Use <code>event.relatedTarget</code> and HTML <code>data-*</code> attributes to vary the contents of the modal depending on which button was clicked. </p>
+										<div class="button-list mt-25">
+											<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+											<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat</button>
+											<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+										</div>
+										<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+														<h5 class="modal-title" id="exampleModalLabel1">New message</h5>
+													</div>
+													<div class="modal-body">
+														<form>
+															<div class="form-group">
+																<label for="recipient-name" class="control-label mb-10">Recipient:</label>
+																<input type="text" class="form-control" id="recipient-name1">
+															</div>
+															<div class="form-group">
+																<label for="message-text" class="control-label mb-10">Message:</label>
+																<textarea class="form-control" id="message-text1"></textarea>
+															</div>
+														</form>
+													</div>
+													<div classodal-footer">
+														<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+														<button type="button" class="btn btn-primary">Send message</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+			</div>
+            </div>
+        </div>
+
+
+       
+
+    </div>
+	
+    <!-- /Main Content -->
+
+    </div>
+<!-- Footer -->
+<!-- <footer class="footer container-fluid pl-10 pr-10">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>2017 &copy; Elmer. Pampered by Hencework</p>
+                </div>
+            </div>
+        </footer> -->
+        <!-- /Footer -->
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.cycle.lite.min.js"></script>
+<script type="text/javascript" src="../js/jquery.pngFix.pack.js"></script>
+<script type="text/javascript" src="../js/jquery.color.js"></script>
+<script type="text/javascript" src="../js/hoverIntent.js"></script>
+<script type="text/javascript" src="../js/superfish.js"></script>
+<script type="text/javascript" src="../js/slimbox2.js"></script>
+<script type="text/javascript" src="../js/slides.min.js"></script>
+<script type="text/javascript" src="../js/custom.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-timepicker-addon.js"></script>
+
+
+
+    <script src="ndors/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="ndors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Vector Maps JavaScript -->
+    <script src="vendors/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="vendors/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="dist/js/vectormap-data.js"></script>
+
+    <!-- Calender JavaScripts -->
+    <script src="vendors/bower_components/moment/min/moment.min.js"></script>
+    <script src="vendors/jquery-ui.min.js"></script>
+    <script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script src="dist/js/fullcalendar-data.js"></script>
+
+    <!-- Counter Animation JavaScript -->
+    <script src="vendors/bower_components/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="vendors/bower_components/jquery.counterup/jquery.counterup.min.js"></script>
+
+    <!-- Data table JavaScript -->
+    <script src="vendors/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+
+    <!-- Slimscroll JavaScript -->
+    <script src="dist/js/jquery.slimscroll.js"></script>
+
+    <!-- Fancy Dropdown JS -->
+    <script src="dist/js/dropdown-bootstrap-extended.js"></script>
+
+    <!-- Sparkline JavaScript -->
+    <script src="vendors/jquery.sparkline/dist/jquery.sparkline.min.js"></script>
+
+    <script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+    <script src="dist/js/skills-counter-data.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="vendors/bower_components/raphael/raphael.min.js"></script>
+    <script src="vendors/bower_components/morris.js/morris.min.js"></script>
+    <script src="dist/js/morris-data.js"></script>
+
+    <!-- Owl JavaScript -->
+    <script src="vendors/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+
+    <!-- Switchery JavaScript -->
+    <script src="vendors/bower_components/switchery/dist/switchery.min.js"></script>
+
+    <!-- Data table JavaScript -->
+    <script src="vendors/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+
+    <!-- Gallery JavaScript -->
+    <script src="dist/js/isotope.js"></script>
+    <script src="dist/js/lightgallery-all.js"></script>
+    <script src="dist/js/froogaloop2.min.js"></script>
+    <script src="dist/js/gallery-data.js"></script>
+
+    <!-- twitter JavaScript -->
+    <script src="dist/js/twitterFetcher.js"></script>
+
+    <!-- Spectragram JavaScript -->
+    <script src="dist/js/spectragram.min.js"></script>
+
+    <!-- Init JavaScript -->
+    <script src="dist/js/init.js"></script>
+    <script src="dist/js/widgets-data.js"></script>
+<script >
+
+	setInterval("item_display()",1000);
 	function item_display() {
 		$("#itemContain").load("item_display2.php");
+        
 	}
-	
-$(document).ready(function() {
+  $(document).ready(function() {
 			$("#dialog-login").dialog("destroy");
 			$("#login").click(function(){
 				$("#dialog-login").dialog({
@@ -40,7 +288,7 @@ $(document).ready(function() {
 			});
 			item_display();
 		});
-function MM_swapImgRestore() { //v3.0
+    function MM_swapImgRestore() { //v3.0
 var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
 			}
 			function MM_preloadImages() { //v3.0
@@ -59,57 +307,9 @@ var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.o
 						var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
 						if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
 						}
-		</script>
-		<!-- START MAIN CONTAINER -->
-		<div class="centerBox">
-			<div class="container">
-				<div id="dialog-login" style="display:none" title="Login Box">
-					<form id="login-form" action="login.php" method="POST">
-						<fieldset>
-							<label for="username">Username</label><br />
-							<input type="text" name="username" id="username" class="text ui-widget-content ui-corner-all" /><br />
-							<label for="password">Password</label><br />
-							<input type="password" name="password" id="password" class="text ui-widget-content ui-corner-all" />
-						</fieldset>
-					</form>
-				</div>
-			</div>
-			<!-- START Auction Item CONTAINER -->
-			
-			<?php include('banner.php');?>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<br><br>
-						<div class="panel panel-info">
-							<div class="panel-heading"> 
-								<b> รายการสินค้าเปิดประมูล
-							 <?php if($m_id!=''){?>
-								<span class="glyphicon glyphicon-user" style="margin-left: 50px"> </span>
-								 สวัสดีคุณ <?php echo $cus_name;
-								}?>
+</script>
 
-								 	
-								 </b>
-								
-							</div>
-						</div>
-					</div>
-					<div id="itemContain" class="itemContain">
-						 
-					</div>
-				</div>
-			</div>
-			<!-- END Auction Item CONTAINER -->
-			
-			
-			
-			</div><!-- END MAIN CONTAINER -->
-			<br class="clear" />
-			<br class="clear" />
-			<br class="clear" />
-		</div>
-		<?php
-		//include('list_prd.php');
-		include('footer.php');
-		?>
+</body>
+
+
+</html>
