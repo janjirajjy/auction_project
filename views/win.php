@@ -156,7 +156,7 @@ FROM detailproduct as  p
 INNER JOIN unit as u  ON p.unit_id=u.unit_id
 INNER JOIN auction as a  ON p.product_id=a.product_id
 INNER JOIN customer as c  ON a.cus_id=c.cus_id 
-WHERE a.auction_status=1
+WHERE a.auction_status=1 AND c.cus_id = $cus_id
 ORDER BY a.auction_id DESC" 
 or die("Error:" . mysqli_error());
 $result = mysqli_query($condb, $query); 
