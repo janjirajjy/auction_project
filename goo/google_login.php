@@ -1,8 +1,7 @@
 <?php
 require('http.php');
 require('oauth_client.php');
-require('config.php');
-
+require('config.php'); 
 
 $client = new oauth_client_class;
 
@@ -58,7 +57,8 @@ if ($success) {
       $_SESSION["name"] = $user->name;
       $_SESSION["email"] = $user->email;
       $_SESSION["new_user"] = "no";
-      var_dump($_SESSION);exit;
+
+     
     } else {
       // New user, Insert in database
       // $sql = "INSERT INTO `users` (`name`, `email`) VALUES " . "( :name, :email)";
@@ -73,6 +73,7 @@ if ($success) {
         $_SESSION["email"] = $user->email;
         $_SESSION["new_user"] = "yes";
         $_SESSION["e_msg"] = "";
+
       }
     }
   } catch (Exception $ex) {
@@ -80,11 +81,49 @@ if ($success) {
   }
 
   $_SESSION["user_id"] = $user->id;
+
 } else {
   $_SESSION["e_msg"] = $client->error;
 }
+ $_SESSION["user_id"];
 
-header("location:../views/welcome.php");
+if(isset($_SESSION['email'])){
+
+            include("../condb.php");
+
+            $email = $_SESSION['email'];
+            $sql="SELECT * FROM customer WHERE  cus_email='$email' ";
+
+            $result = mysqli_query($condb,$sql);
+            if(mysqli_num_rows($result)==1){
+                $row = mysqli_fetch_array($result);
+                $_SESSION["cus_id"] = $row["cus_id"];
+                $_SESSION["cus_name"] = $row["cus_name"];
+                $_SESSION["cus_status"] = $row["cus_status"];
+                if($_SESSION["cus_status"]=='ONLINE'){
+                  Header("Location: ../views/welcome.php");
+                }
+
+                if ($_SESSION["cus_status"]!='ONLINE'){   
+
+                  echo "<script>";
+                    echo "alert(\" ถูกระงับการใช้งาน\");"; 
+                    echo "window.location = 'index.php'; ";
+                  echo "</script>";
+
+                }
+
+            }else{
+              echo "<script>";
+                  echo "alert(\" user หรือ  password ไม่ถูกต้อง\");"; 
+                  echo "window.history.back()";
+              echo "</script>";
+
+    }
+    // header("location:../views/welcome.php");
+  }
+
+
 exit;
 
 ?>

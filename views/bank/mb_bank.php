@@ -114,16 +114,16 @@ while ($row = mysqli_fetch_array($result)) {
                         <li><a href="signup.php">สมัครสมาชิก</a></li> -->
 
                         <?php if($m_id!=''){
-               echo '<li><a href="../profile/mb_profile.php">
-               <span class="glyphicon glyphicon-user"> </span>'
-             .' '.$cus_name .' - Profile</a>
-           </li>';
-            echo '<li><a href="logout.php">
+              echo '<li><a href="../views/profile/mb_profile.php">
+                <span class="glyphicon glyphicon-user"> </span>'
+              .' '.$cus_name .' - Profile</a>
+            </li>';
+            echo '<li><a href="../../login_google.php">
               <span class="glyphicon glyphicon-off"> </span>
             Logout</a>
           </li>';
           }else{
-          echo '<li><a href="login.php">
+          echo '<li><a href="../../login_google.php">
             <span class="glyphicon glyphicon-user"> </span>
           เข้าสู่ระบบ</a>
         </li>';

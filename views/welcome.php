@@ -31,7 +31,7 @@
  $m_id = $_SESSION['cus_id'];
  $cus_name = $_SESSION['cus_name'];
  $cus_email =$_SESSION['cus_email'];
-//  var_dump($_SESSION);
+//  var_dump($_SESSION);exit;
  ?>
 <?php
 $sql_update = "UPDATE auction SET auction_status = 1 WHERE (UNIX_TIMESTAMP(auction_end) - UNIX_TIMESTAMP()) < 0";

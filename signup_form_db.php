@@ -59,12 +59,12 @@ include('condb.php');
 	if($result){
 	echo "<script type='text/javascript'>";
 	echo "alert('สมัครสมาชิกสำเร็จ กรุณา Login เข้าใช้งานระบบ');";
-	echo "window.location = 'login.php'; ";
+	echo "window.location = 'login_google.php'; ";
 	echo "</script>";
 	}else{
 	echo "<script type='text/javascript'>";
 	//echo "alert('Error!!');";
-	echo "window.location = 'signup.php'; ";
+	echo "window.location = 'register.php'; ";
 	echo "</script>";
 }
 ?>

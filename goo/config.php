@@ -26,13 +26,13 @@ try {
 }
 
 /* make sure the url end with a trailing slash */
-define("SITE_URL", "http://localhost/auction/goo/");
+define("SITE_URL", "http://localhost/auction_project/goo/");
 /* the page where you will be redirected for authorzation */
 define("REDIRECT_URL", SITE_URL."google_login.php");
 
 /* * ***** Google related activities start ** */
-define("CLIENT_ID", "892782782457-ifhhvp4e67jrfqa28uvdhpa8j3rcerju.apps.googleusercontent.com");
-define("CLIENT_SECRET", "6nDuImcUfL788dn9D5Th_Fit");
+define("CLIENT_ID", "867232916587-umr2jj0kbs7bcspodknj547t85687isr.apps.googleusercontent.com");
+define("CLIENT_SECRET", "hkBooLzzOOEYQ1gSnpfzGGPw");
 
 /* permission */
 define("SCOPE", 'https://www.googleapis.com/auth/userinfo.email '.

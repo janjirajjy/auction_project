@@ -1,7 +1,11 @@
+<?php require('condb.php');?>
 <?php 
-include('header.php');
+// include('header.php');
+session_start();
+session_destroy();
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>

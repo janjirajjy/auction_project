@@ -22,7 +22,7 @@ while ($row = mysqli_fetch_array($result)) {
 	$highest_bidder[] = $row['user_Name'];
 	$date[] = $row['auction_end'];
 	$path[] = $row['product_photo'];
-
+	$cus_id_dis[] =$row['cus_id'];
 	// echo $path;
 }
 ?>
@@ -69,8 +69,12 @@ $(document).ready(function(){
 if (isset($id)) {
 	$in=0;
         for($i=0;$i<count($id);$i++) {
-			$in++;
-			var_export($in);
+			if ($cus_id_dis[$i]!= null && $cus_id_dis[$i] === $_SESSION['cus_id']) {
+				
+			}
+			$jook ='';
+			// $in++;
+			// var_export($in);
         echo  '<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6 ">';
         echo '<div class="panel collapse in ">';
         echo   '<div class="panel-body pa-0">';
@@ -87,7 +91,7 @@ if (isset($id)) {
        
         echo             '</div>';
         echo '<a href="../bid_history.php?id='.$id[$i].'" class="btn btn-info" style="width:100%">
-        <span class="glyphicon glyphicon-shopping-cart"> </span> 
+        <span class="glyphicon glyphicon-shopping-cart" disabled> </span> 
              ประมูล </a>';
         echo         '</article>';
         echo    '</div>';
