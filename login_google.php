@@ -45,7 +45,7 @@ session_destroy();
 				</div>
 				<div class="form-group mb-0 pull-right">
 					
-					<a class="inline-block btn btn-primary  btn-rounded btn-outline" href="singup.php">สมัครสมาชิก</a>
+					<a class="inline-block btn btn-primary  btn-rounded btn-outline" href="register.php">สมัครสมาชิก</a>
 				</div>
 				<div class="clearfix"></div>
 			</header>

@@ -41,7 +41,7 @@ include('header.php');
 				</div>
 				<div class="form-group mb-0 pull-right">
 					
-					<a class="inline-block btn btn-primary  btn-rounded btn-outline" href="singup.php">Login</a>
+					<a class="inline-block btn btn-primary  btn-rounded btn-outline" href="login_google.php">ลงชื่อเข้าสู้ระบบ</a>
 				</div>
 				<div class="clearfix"></div>
 			</header>
