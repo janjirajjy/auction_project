@@ -52,6 +52,7 @@ while($row = mysqli_fetch_array($result)) {
   echo "</tr>";
   $i++;
 }
+
 echo "</table>";
 //5. close connection
 mysqli_close($condb);

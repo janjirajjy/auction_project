@@ -112,7 +112,7 @@ body {
   font-size: 14px;
   font-style: normal;
   line-height: 1.5;
-  background: #acb0b1;
+  /* background: #acb0b1; */
   overflow-x: hidden; }
 
 a:hover, a:active {
@@ -2657,9 +2657,9 @@ a#toggle_mobile_nav {
 
 .page-wrapper {
    /* margin-left: 225px;  */
-  padding: 70px 20px;
+  padding: 200px 20px;;
   position: relative;
-  background: #ecd1ad;
+  background: rgb(253, 253, 253);
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   transition: all 0.4s ease;

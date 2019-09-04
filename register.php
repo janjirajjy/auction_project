@@ -74,21 +74,21 @@ include('header.php');
                                             <span class="invalid-feedback"><?php echo $name_err; ?></span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="email">อีเมล</label>
+                                            <label for="email">Email</label>
                                             <input type="email" name="cus_email"
                                                 class="form-control form-control-lg <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>"
                                                 value="<?php echo $email; ?>">
                                             <span class="invalid-feedback"><?php echo $email_err; ?></span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="password">รหัสผ่าน</label>
+                                            <label for="password">Password</label>
                                             <input type="password" name="cus_password"
                                                 class="form-control form-control-lg <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>"
                                                 value="<?php echo $password; ?>">
                                             <span class="invalid-feedback"><?php echo $password_err; ?></span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="confirm_password">ยืนยันรหัสผ่าน</label>
+                                            <label for="confirm_password">Password confirm</label>
                                             <input type="password" name=""
                                                 class="form-control form-control-lg <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>"
                                                 value="<?php echo $confirm_password; ?>">
@@ -98,7 +98,7 @@ include('header.php');
                                         <div class="form-row">
                                             <div class="form-group">
                                                 <div class="col">
-                                                    <input type="submit" value="ยืนการสมัคร"
+                                                    <input type="submit" value="ยืนยันการสมัคร"
                                                         class="btn btn-success btn-block">
 
                                                 </div>

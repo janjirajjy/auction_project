@@ -157,10 +157,12 @@ while ($row = mysqli_fetch_array($result)) {
                                                 </a>                                                                                                        
                                           <a href="mb_bank.php?act=add" class="btn btn-primary"> เพิ่มข้อมูล
                                                 </a>
-                                            </h4>
-                                      <br>
+                                            </h4> <br>
                                         </div>
+                                        <br>
+                                        <br>
                                         <?php 
+                                        
                                     $act = (isset($_GET['act']) ? $_GET['act'] : '');
 
                                     if($act=='add'){

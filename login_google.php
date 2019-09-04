@@ -63,7 +63,7 @@ session_destroy();
 										<div class="row">
 											<div class="col-sm-12 col-xs-12">
 												<div class="mb-30">
-													<h3 class="text-center txt-dark mb-10">ลงชื่อเข้าสู้ระบบ</h3>
+													<h3 class="text-center txt-dark mb-10">ลงชื่อเข้าสู่ระบบ</h3>
 													
 												</div>	
 												<div class="form-wrap">
@@ -89,7 +89,7 @@ session_destroy();
                                         </div>
 														
 														<div class="form-group text-center">
-															<button type="submit" class="btn btn-primary  btn-rounded" value="">เข้าสู้ระบบ</button>
+															<button type="submit" class="btn btn-primary  btn-rounded" value="">เข้าสู่ระบบ</button>
 														</div>
 														<!-- <div class="col">
               				  <a href="register.php" class="btn btn-light btn-block">No account? Register</a>

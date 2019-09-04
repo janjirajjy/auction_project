@@ -1,8 +1,8 @@
 
 
-<style>.center { text-align: ; color: blue;} </style>
+<style>.center { text-align: ; color: black;} </style>
 <br>
- <h4 class="center">เพิ่ม</h4> <br> 
+ <h4 class="center">เพิ่มข้อมูลธนาคาร</h4> <br> 
 
 <form action="mb_bank_form_add_db.php" method="post" class="form-horizontal">
   <div class="form-group">

@@ -30,7 +30,7 @@ extract($row);
     <div class="col-sm-2 control-label">
       ชื่อสินค้า :
     </div>
-    <div class="col-sm-7">
+    <div class="col-sm-4">
       <input type="text" name="product_name" required class="form-control" value="<?php echo $row['product_name'];?>">
     </div>
   </div>

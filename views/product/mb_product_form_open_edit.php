@@ -20,13 +20,15 @@ extract($row);
 // echo '</pre>';
 
 ?>
+
 <h4>แก้ไขการเปิดการประมูลสินค้า </h4>
+<br>
 <form action="mb_product_form_open_edit_db.php" method="post" class="form-horizontal" enctype="multipart/form-data">
     <div class="form-group">
         <div class="col-sm-2 control-label">
             ชื่อสินค้า :
         </div>
-        <div class="col-sm-7">
+        <div class="col-sm-4">
             <input type="text" name="auction_product" required class="form-control"
                 value="<?php echo $row['product_name'];?>" disabled>
         </div>

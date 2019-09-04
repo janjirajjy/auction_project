@@ -30,10 +30,10 @@ $auction_id = $_POST['auction_id'];
 
 	$result = mysqli_query($condb, $sql) or die ("Error in query: $sql " . mysqli_error());
 
-	// echo '<pre>';
-	// echo $sql;
-	// echo '</pre>';
-	// exit;
+	echo '<pre>';
+	echo $sql;
+	echo '</pre>';
+	exit;
 
  
 	

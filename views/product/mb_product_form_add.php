@@ -12,7 +12,7 @@ echo '<h4 class="center">เพิ่มสินค้า</h4> <br> ';
         <div class="col-sm-2 control-label">
             ชื่อสินค้า :
         </div>
-        <div class="col-sm-7">
+        <div class="col-sm-4">
             <input type="hidden" name="cus_id_user" value="<?php echo $cus_cus_email;?>">
             <input type="text" name="product_name" required class="form-control">
         </div>

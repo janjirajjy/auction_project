@@ -277,7 +277,7 @@ LIMIT 1";
                         <div class="panel panel-default card-view">
                             <div class="panel-heading">
                                 <div class="pull-left">
-                                    <h5 class="control-label mb-10" for="exampleCountry">จัดการข้อมูลธนาคาร</h5>
+                                    <h5 class="control-label mb-10" for="exampleCountry">ประมูลเลย</h5>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -288,7 +288,7 @@ LIMIT 1";
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <h1>ประมูล</h1>
+                                                    <!-- <h1>ประมูล</h1> -->
                                                     <div class="col-sm-5">
                                                         <h4 style="margin:0px;color:red;">
                                                             <span>
@@ -307,7 +307,7 @@ LIMIT 1";
                                                         วันที่เริ่มประมูล :
                                                         <input type="text" name="" value="<?php echo date('d/m/Y', strtotime($row_item['auction_startdate'])); ?>" readonly>
                                                         <br><br>
-                                                        วันจบประมูล :
+                                                        วันจบประมูล   :
                                                         <input type="text" name="" value="<?php echo date('d/m/Y', strtotime($row_item['auction_enddate'])); ?>" readonly>
                                                         <br><br>
                                                         เวลาปิดประมูล :
@@ -385,16 +385,8 @@ LIMIT 1";
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-sm-12">
-                                                        <div class="col-xs-7">
-                                                            <div id="bid_history"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- END Auction Item CONTAINER -->
-                                            <div class="container">
+
+                                                        <div class="container">
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div id="bid_description">
@@ -410,8 +402,16 @@ LIMIT 1";
                                                 </div>
 
                                             </div>
-
-                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="col-xs-7">
+                                                            <div id="bid_history"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- END Auction Item CONTAINER -->
+                                            </div>
 
 
                                     </div>
@@ -420,10 +420,6 @@ LIMIT 1";
 
                             </div>
                         </div>
-
-
-
-
                     </div>
 
                     <!-- /Main Content -->
