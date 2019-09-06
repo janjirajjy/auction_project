@@ -112,7 +112,7 @@ while ($row = mysqli_fetch_array($result)) {
                         <li><a href="signup.php">สมัครสมาชิก</a></li> -->
 
                         <?php if($m_id!=''){
-              echo '<li><a href="../views/profile/mb_profile.php">
+              echo '<li><a href="../../views/profile/mb_profile.php">
                 <span class="glyphicon glyphicon-user"> </span>'
               .' '.$cus_name .' - Profile</a>
             </li>';
