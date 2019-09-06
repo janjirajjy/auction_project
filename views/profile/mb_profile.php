@@ -154,7 +154,7 @@ while ($row = mysqli_fetch_array($result)) {
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label class="control-label mb-10"
-                                                        for="exampleInputName_1">อีเมล</label>
+                                                        for="exampleInputName_1">Email</label>
                                                     <input type="" class="form-control" name="cus_email" required=""
                                                         id="exampleInputName_1" placeholder="อีเมล"
                                                         value="<?php echo $row1['cus_email'];?>" disabled>
@@ -165,7 +165,7 @@ while ($row = mysqli_fetch_array($result)) {
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label class="control-label mb-10"
-                                                        for="exampleInputName_1">รหัสผ่าน</label>
+                                                        for="exampleInputName_1">Password</label>
                                                     <input type="" class="form-control" name="cus_password" required=""
                                                         id="exampleInputName_1" placeholder="รหัสผ่าน"
                                                         value="<?php echo $row1['cus_password'];?>">
