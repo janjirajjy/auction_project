@@ -12,11 +12,15 @@ session_start();
                   ";
 
                   $result = mysqli_query($condb,$sql);
-
+                 
+                 $sql1="SELECT * FROM user 
+                 WHERE  user_username='$cus_email' AND user_password='$cus_password' 
+                  ";
+                   $result1 = mysqli_query($condb,$sql1);
                   //print_r($result);
                   //exit;
 				
-                  if(mysqli_num_rows($result)==1){
+                  if(mysqli_num_rows($result)==1 ){
 
                       $row = mysqli_fetch_array($result);
                       $_SESSION["cus_id"] = $row["cus_id"];
@@ -24,20 +28,42 @@ session_start();
                       $_SESSION["cus_status"] = $row["cus_status"];
                       if($_SESSION["cus_status"]=='ONLINE'){
 
-                        //echo 'member';
-                        
                         Header("Location: views/welcome.php");
-                      }
 
-                      if ($_SESSION["cus_status"]!='ONLINE'){   
+                      }else if ($_SESSION["cus_status"]=='admin'){   
 
+                        Header("Location: admin/index.php");
+
+                      }else {
                         echo "<script>";
-                          echo "alert(\" ถูกระงับการใช้งาน\");"; 
-                          echo "window.location = 'index.php'; ";
-                        echo "</script>";
-
+                        echo "alert(\" ถูกระงับการใช้งาน\");"; 
+                        echo "window.location = 'index.php'; ";
+                      echo "</script>";
                       }
 
+
+                      
+
+                  }else if(mysqli_num_rows($result1)==1){
+                    $row = mysqli_fetch_array($result1);
+                    $_SESSION["user_id"] = $row["user_id"];
+                    $_SESSION["user_name"] = $row["user_name"];
+                    $_SESSION["user_level"] = $row["user_level"];
+                    if($_SESSION["user_level"]=='A'){
+
+                      //echo 'member';
+                      
+                      Header("Location: admin/");
+                    }
+
+                    if ($_SESSION["user_level"]!='A'){   
+
+                      echo "<script>";
+                        echo "alert(\" ไม่มีสิทธิเข้าใช้งานระบบ\");"; 
+                        echo "window.location = 'index.php'; ";
+                      echo "</script>";
+
+                    }
                   }else{
                     echo "<script>";
                         echo "alert(\" user หรือ  password ไม่ถูกต้อง\");"; 

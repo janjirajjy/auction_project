@@ -12,7 +12,8 @@ $result2 = mysqli_query($condb, $sql) or die ("Error in query: $sql " . mysqli_e
 $row = mysqli_fetch_array($result2);
 extract($row);
 ?>
-<h4> Form เปิดการประมูลสินค้า </h4>
+<h4> เปิดการประมูลสินค้า </h4>
+<br>
 <form action="product_form_open_db.php" method="post" class="form-horizontal" enctype="multipart/form-data">
   <div class="form-group">
     <div class="col-sm-2 control-label">

@@ -1,4 +1,5 @@
-<h4> Form เพิ่มสมาชิก </h4>
+<h4> เพิ่มสมาชิก </h4>
+<br>
 <form action="customer_form_add_db.php" method="post" class="form-horizontal">
   <div class="form-group">
     <div class="col-sm-2 control-label">

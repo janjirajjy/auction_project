@@ -1,25 +1,25 @@
 <!-- start menu -->
-<div class="container" id="hd">
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.php">HOME</a>
-          </div>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li><a href="index.php">หน้าแรก</a></li>
+<div class="wrapper  theme-5-active pimary-color-blue">
+  <!-- Top Menu Items -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+
+    <div class="mobile-only-nav pull-left">
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.php">หน้าหลัก</a>
+
+    </div>
+    <div class="mobile-only-nav pull-right">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav" id="navlink" style="float:right">
+        <li><a href="index.php">หน้าแรก</a></li>
               <li><a href="pay.php">รายการชำระเงิน</a></li>
-               <li class="dropdown">
+              <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">รายงาน <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="report.php">รายงานยอดชายภาพรวม</a></li>
@@ -27,11 +27,34 @@
             <li><a href="report.php?act=y">รายงานยอดขายรายปี</a></li>
           </ul>
         </li>
-            </ul>
-            </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-          </nav>
+
+
+          <?php if ($m_id != '') {
+            echo '<li><a href="../views/profile/mb_profile.php">
+                <span class="glyphicon glyphicon-user"> </span>'
+              . ' ' . $cus_name . ' - Profile</a>
+            </li>';
+            echo '<li><a href="../login_google.php">
+              <span class="glyphicon glyphicon-off"> </span>
+            Logout</a>
+          </li>';
+          } else {
+            echo '<li><a href="../login_google.php">
+            <span class="glyphicon glyphicon-user"> </span>
+            Logout</a>
+        </li>';
+          } ?>
+        </ul>
+      </div>
+
+  </nav>
+  <div class="page-wrapper">
+    <div class="container-fluid">
+      <div class="row heading-bg">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+          <h5 class="txt-dark"></h5>
+        </div>
+       
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         </div>
       </div>
-    </div>
-    <!-- end menu -->

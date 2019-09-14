@@ -42,6 +42,7 @@ extract($row);
       <textarea name="product_detail" class="form-control" required id="editor"><?php echo $row['product_detail'];?></textarea>
     </div>
   </div>
+  
   <div class="form-group">
     <div class="col-sm-2 control-label">
       ราคา :
@@ -92,8 +93,12 @@ extract($row);
     </div>
   </div>
 </form>
+<script src="../../ckeditor/ckeditor.js"></script>
+  <script src="../../ckeditor/samples/js/sample.js"></script>
+  <link rel="stylesheet" href="../../ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
 <script>
 initSample();
+
 </script>
 <?php
 mysqli_close($condb);

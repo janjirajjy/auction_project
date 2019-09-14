@@ -8,7 +8,7 @@ ORDER BY p.product_id ASC"
 or die("Error:" . mysqli_error());
 $result = mysqli_query($condb, $query); 
 
-echo '<h4>::รายการสินค้าที่เปิดประมูล::</h4>';
+
 echo "<table id='example' class='display table table-bordered table-hover'>";
 //หัวข้อตาราง
 echo "

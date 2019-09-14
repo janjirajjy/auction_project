@@ -20,7 +20,8 @@ extract($row);
 // echo '</pre>';
 
 ?>
-<h4> Form แก้ไขการเปิดการประมูลสินค้า </h4>
+<h4> แก้ไขการเปิดการประมูลสินค้า </h4>
+<br>
 <form action="product_form_open_edit_db.php" method="post" class="form-horizontal" enctype="multipart/form-data">
     <div class="form-group">
         <div class="col-sm-2 control-label">

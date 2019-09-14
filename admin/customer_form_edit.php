@@ -8,7 +8,8 @@ extract($row);
 // print_r($row);
 // echo '</pre>';
 ?>
-<h4> Form แก้ไขสมาชิก </h4>
+<h4> แก้ไขข้อมูลสมาชิก </h4>
+<br>
 <form action="customer_form_edit_db.php" method="post" class="form-horizontal">
   <div class="form-group">
     <div class="col-sm-2 control-label">

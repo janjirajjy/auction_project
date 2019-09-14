@@ -67,6 +67,9 @@ echo '<h4 class="center">เพิ่มสินค้า</h4> <br> ';
         </div>
     </div>
 </form>
+<script src="../../ckeditor/ckeditor.js"></script>
+  <script src="../../ckeditor/samples/js/sample.js"></script>
+  <link rel="stylesheet" href="../../ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
 <script>
 initSample();
 </script>

@@ -2,15 +2,27 @@
 <body>
   <?php include('nav.php'); //menu?>
   <!-- content -->
-  <div class="container">
+  <!-- <div class="container"> -->
     <div class="row">
       <div class="col-md-2">
         <?php include('menu_l.php');?>
       </div>
+      
       <div class="col-md-10">
-        <h4>::จัดการข้อมูลเจ้าของร้าน::
-          <a href="user.php?act=add" class="btn btn-primary"> +ข้อมูล</a>
+      <div class="col-md-12">
+        <div class="panel panel-default card-view">
+          <div class="panel-heading">
+            <div class="pull-left">
+              <h6 class="panel-title txt-dark">จัดการข้อมูลเจ้าหน้าที่</h6>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <br>
+        <h4>
+          <a href="user.php?act=add" class="btn btn-primary"> เพิ่มเจ้าหน้าที่</a>
         </h4>
+        <div class="panel-wrapper collapse in">
+            <div class="panel-body">
        <?php 
 
        $act = (isset($_GET['act']) ? $_GET['act'] : '');
@@ -23,6 +35,9 @@
         include('user_list.php');
        }   
        ?>
+       </div>
+       </div>
+      </div>
       </div>
     </div>
   </div>

@@ -2,7 +2,8 @@
 $query = "SELECT * FROM unit" or die("Error:" . mysqli_error());
 $result = mysqli_query($condb, $query);
 ?>
-<h4> Form เพิ่มสินค้า  </h4>
+<h4> เพิ่มสินค้า  </h4>
+<br>
 <form action="product_form_add_db.php" method="post" class="form-horizontal" enctype="multipart/form-data">
   <div class="form-group">
     <div class="col-sm-2 control-label">

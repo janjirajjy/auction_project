@@ -1,4 +1,5 @@
-<h4> Form เพิ่มเจ้าของร้าน </h4>
+<h4> เพิ่มเจ้าหน้าที่ </h4>
+<br>
 <form action="user_form_add_db.php" method="post" class="form-horizontal">
   <div class="form-group">
     <div class="col-sm-2 control-label">

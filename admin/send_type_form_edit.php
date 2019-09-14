@@ -5,7 +5,8 @@ $result = mysqli_query($condb, $sql) or die ("Error in query: $sql " . mysqli_er
 $row = mysqli_fetch_array($result);
 extract($row);
 ?>
-<h4> Form แก้ไขประเภทการส่ง </h4>
+<h4> แก้ไขประเภทการส่ง </h4>
+<br>
 <form action="send_type_form_edit_db.php" method="post" class="form-horizontal">
   <div class="form-group">
     <div class="col-sm-4 control-label">

@@ -74,7 +74,7 @@ while ($row = mysqli_fetch_array($result)) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="welcome.php">หน้าหลัก</a>
+                <a class="navbar-brand" href="welcome.php">ประมูลสินค้า</a>
 
             </div>
             <div class="mobile-only-nav pull-right">

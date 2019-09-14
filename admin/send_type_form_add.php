@@ -1,4 +1,5 @@
-<h4> Form เพิ่มประเภทการส่ง </h4>
+<h4> เพิ่มประเภทการส่ง </h4>
+<br>
 <form action="send_type_form_add_db.php" method="post" class="form-horizontal">
   <div class="form-group">
     <div class="col-sm-4 control-label">

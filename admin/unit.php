@@ -2,30 +2,49 @@
 <body>
   <?php include('nav.php'); //menu?>
   <!-- content -->
-  <div class="container">
-    <div class="row">
+  <!-- <div class="container"> -->
+  <div class="row">
       <div class="col-md-2">
         <?php include('menu_l.php');?>
       </div>
-      <div class="col-md-6">
-        <h4>::จัดการข้อมูลหน่วยสินค้า::
-          <a href="unit.php?act=add" class="btn btn-primary"> +ข้อมูล</a>
+      
+      <div class="col-md-10">
+      <div class="col-md-12">
+        <div class="panel panel-default card-view">
+          <div class="panel-heading">
+            <div class="pull-left">
+              <h6 class="panel-title txt-dark">จัดการข้อมูลหน่วยสินค้า </h6>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <br>
+          <h4>
+          <a href="unit.php?act=add" class="btn btn-primary">เพิ่มหน่วยสินค้า</a>
         </h4>
-       <?php 
+        <div class="panel-wrapper collapse in">
+            <div class="panel-body">
+            <?php 
 
-       $act = (isset($_GET['act']) ? $_GET['act'] : '');
+$act = (isset($_GET['act']) ? $_GET['act'] : '');
 
-       if($act=='add'){
-          include('unit_form_add.php');
-        }elseif($act=='edit'){
-          include('unit_form_edit.php');
-       }else{
-        include('unit_list.php');
-       }   
-       ?>
+if($act=='add'){
+   include('unit_form_add.php');
+ }elseif($act=='edit'){
+   include('unit_form_edit.php');
+}else{
+ include('unit_list.php');
+}   
+?>
+       </div>
+       </div>
+      </div>
       </div>
     </div>
   </div>
+
+
+
+  
   <?php include('footer.php'); //footer?>
 </body>
 <?php include('js.php'); //js?>
