@@ -257,14 +257,15 @@ while ($row = mysqli_fetch_array($result)) {
                                                 <div class="form-group">
                                                     <label class="control-label mb-10"
                                                         for="exampleInputName_1">ที่อยู่</label>
-                                                    <input type="" class="form-control" name="cus_address" required=""
-                                                        id="exampleInputName_1"
+                                                        <textarea type="" class="form-control" name="cus_address" required=""
+                                                        id="value"
                                                         placeholder="ห้องเลขที่,บ้านเลขที่,ตึก,ชื่อถนน"
-                                                        value="<?php echo $row1['cus_address'];?>">
+                                                       ><?php echo $row1['cus_address'];?></textarea>
                                                 </div>
+                                               
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <!-- <div class="row">
                                             <div class="col-lg-3">
                                                 <div class="form-group">
                                                     <label class="control-label mb-10"
@@ -292,7 +293,7 @@ while ($row = mysqli_fetch_array($result)) {
                                                         value="<?php echo $row1['cus_zipcode'];?>">
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
 
                                         <div class="row ">

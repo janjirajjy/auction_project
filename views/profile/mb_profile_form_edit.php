@@ -149,7 +149,7 @@
 															<input type="" class="form-control" name="cus_address" required="" id="exampleInputName_1" placeholder="ห้องเลขที่,บ้านเลขที่,ตึก,ชื่อถนน" value="<?php echo $row['cus_address'];?>">
 															</div>
 														</div>
-												</div>
+												<!-- </div>
 												<div class="row">
 														<div class="col-lg-3">
 																<div class="form-group"> 
@@ -162,7 +162,7 @@
 														<label class="control-label mb-10" for="exampleInputName_1">อำเภอ</label>
 														<input type="" class="form-control"  name="cus_amphur" required="" id="exampleInputName_1" placeholder="อำเภอ"value="<?php echo $row['cus_amphur'];?>">
 														</div>
-													</div>
+													</div> -->
 													<div class="col-lg-3">
 															<div class="form-group"> 
 														<label class="control-label mb-10" for="exampleInputName_1">รหัสไปรษณี</label>
