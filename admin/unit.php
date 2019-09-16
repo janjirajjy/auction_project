@@ -7,7 +7,6 @@
       <div class="col-md-2">
         <?php include('menu_l.php');?>
       </div>
-      
       <div class="col-md-10">
       <div class="col-md-12">
         <div class="panel panel-default card-view">

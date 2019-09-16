@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-xs-12 col-md-12">
       <p align="center" style="margin: 100px">
-       Backend Auction @2018
+     JANJIRA : 041 : JJY
       </p>
     </div>
   </div>

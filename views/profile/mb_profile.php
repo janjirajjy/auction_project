@@ -194,14 +194,20 @@ while ($row = mysqli_fetch_array($result)) {
                                                 </div>
                                             </div>
                                             <?php
-                                            if ($row1['cus_sex']==0 && $row1['cus_sex']!=null) {
-                                                $row1['radio1'] = true;
-                                            } else {
-                                                $row1['radio2'] = true;
-                                            }
+                                     switch($row1['cus_sex']){
+                                         case "0":
+                                                $type =0;
+                                         break;
+                                         case "1":
+                                                $type =1;
+                                         break;
+                                         default:
+                                                $type =0;
+                                                break;
+                                     }
                                            
                                             ?>
-                                      
+                                    
 
                                             <div class="col-lg-3">
                                                 <div class="form-group">
@@ -210,15 +216,15 @@ while ($row = mysqli_fetch_array($result)) {
                                                     <div class="radio-list">
                                                         <div class="radio-inline pl-0">
                                                             <div class="radio radio-info">
-                                                                <input type="radio" name="radio" id="radio1"
-                                                                    value="option1">
+                                                                <input type="radio" name="cus_sex" id="radio1"
+                                                                    value="0" <?php if ($type == 0) { echo "checked"; } ?>>
                                                                 <label for="radio1">ชาย</label>
                                                             </div>
                                                         </div>
                                                         <div class="radio-inline">
                                                             <div class="radio radio-info">
-                                                                <input type="radio" name="radio" id="radio2"
-                                                                    value="option2">
+                                                                <input type="radio" name="cus_sex" id="radio2"
+                                                                    value="1"<?php if ($type == 1) { echo "checked"; } ?>>
                                                                 <label for="radio2">หญิง</label>
                                                             </div>
                                                         </div>

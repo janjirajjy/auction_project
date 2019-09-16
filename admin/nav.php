@@ -18,17 +18,16 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav" id="navlink" style="float:right">
         <li><a href="index.php">หน้าแรก</a></li>
-              <li><a href="pay.php">รายการชำระเงิน</a></li>
-              <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">รายงาน <span class="caret"></span></a>
-          <ul class="dropdown-menu">
+              <li><a href="pay.php">รายการชำระเงิน</a>  </li>
+              <!-- <li class="dropdown  app-drp">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">รายงาน <span class="caret"></span></a>
+          <div class="dropdown-menu">
             <li><a href="report.php">รายงานยอดชายภาพรวม</a></li>
             <li><a href="report.php?act=m">รายงานยอดชายรายเดือน</a></li>
             <li><a href="report.php?act=y">รายงานยอดขายรายปี</a></li>
-          </ul>
-        </li>
-
-
+          </div>
+        </li> -->
+      
           <?php if ($m_id != '') {
             echo '<li><a href="../views/profile/mb_profile.php">
                 <span class="glyphicon glyphicon-user"> </span>'
@@ -48,6 +47,7 @@
       </div>
 
   </nav>
+
   <div class="page-wrapper">
     <div class="container-fluid">
       <div class="row heading-bg">
@@ -58,3 +58,4 @@
         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         </div>
       </div>
+     

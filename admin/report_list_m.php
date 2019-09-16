@@ -32,7 +32,10 @@ while($row = mysqli_fetch_array($result)) {
   echo "<td align='right'>" .number_format($row["trans_price"],2) ."</td> "; 
   echo "</tr>";
   $ptotal  += $row["trans_price"];
+  // $date = date('M',strtotime($row["ord_date"]));
+  // var_dump($date);exit;
 }
+
 echo  "<tr class='info'>";
 echo "<td>รวม</td>";
 echo  "<td colspan='4'  align='right'>";
@@ -42,6 +45,26 @@ echo "</b>";
 echo  "</td>";
 echo  "</tr>";
 echo "</table>";
+function setdate($date){
+  switch($daet){
+    case "Sep": $getdate="มกราคม";
+    break;
+    case "": $getdate="มกราคม";
+    break;
+    case "": $getdate="มกราคม";
+    break;
+    case "": $getdate="มกราคม";
+    break;
+    case "": $getdate="มกราคม";
+    break;
+    case "": $getdate="มกราคม";
+    break;
+    case "": $getdate="มกราคม";
+    break;
+
+  } 
+  return $getdate;
+}
 //5. close connection
 mysqli_close($condb);
 

@@ -13,8 +13,34 @@
     <link href="../vendors/bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css" rel="stylesheet"
         type="text/css" />
     <!-- Custom CSS -->
-    <link href="../dist/css/style.css" rel="stylesheet" type="text/css">
-	</head>
+	<link href="../dist/css/style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+	<!-- Morris Charts CSS -->
+	<link href="vendors/bower_components/morris.js/morris.css" rel="stylesheet" type="text/css" />
+
+	<!-- vector map CSS -->
+	<link href="vendors/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" type="text/css" />
+
+	<!-- Calendar CSS -->
+	<link href="vendors/bower_components/fullcalendar/dist/fullcalendar.css" rel="stylesheet" type="text/css" />
+
+	<!-- Data table CSS -->
+	<link href="vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet"
+		type="text/css" />
+
+	<!-- Custom CSS -->
+	<link href="dist/css/style.css" rel="stylesheet" type="text/css">
+	<!-- jquery-steps css -->
+	<link rel="stylesheet" href="vendors/bower_components/jquery.steps/demo/css/jquery.steps.css">
+
+	<!-- bootstrap-touchspin CSS -->
+	<link href="vendors/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet"
+		type="text/css" />
+
+</head>
 
 		<script>
 		$(document).ready(function() {

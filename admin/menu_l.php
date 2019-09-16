@@ -2,12 +2,15 @@
 	<a href="index.php" class="list-group-item active">
 		จัดการข้อมูลระบบ
 	</a>
-	<a href="user.php" class="list-group-item">-เจ้าหน้าที่ดูแลระบบ</a>
-	<a href="customer.php" class="list-group-item">-ข้อมูลผู้ใช้</a>
-	<a href="unit.php" class="list-group-item">-หน่วยสินค้า</a>
-	<a href="product.php" class="list-group-item">-สินค้า</a>
-	<a href="send_type.php" class="list-group-item">-ประเภทการส่ง</a>
-	<a href="productstatus.php" class="list-group-item">-สถานะการจัดส่ง</a>
+	<a href="user.php" class="list-group-item">เจ้าหน้าที่ดูแลระบบ</a>
+	<a href="customer.php" class="list-group-item">ข้อมูลผู้ใช้</a>
+	<a href="product.php" class="list-group-item">สินค้า</a>
+	<a href="report.php" class="list-group-item">รายงานยอดชายภาพรวม</a>
+	<a href="report.php?act=m" class="list-group-item">รายงานยอดชายรายเดือน</a>
+	<a href="report.php?act=y" class="list-group-item">รายงานยอดขายรายปี</a>
+	<a href="unit.php" class="list-group-item">หน่วยสินค้า</a>
+	<a href="send_type.php" class="list-group-item">ประเภทการส่ง</a>
+	<a href="productstatus.php" class="list-group-item">สถานะการจัดส่ง</a>
 	<!-- <a href="bank.php" class="list-group-item">-ธนาคาร</a> -->
 	<a href="../login_google.php" class="list-group-item list-group-item-danger" onclick="return confirm('ยืนยัน');">ออกจากระบบ</a>
 </div>

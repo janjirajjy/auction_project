@@ -11,7 +11,7 @@ or die("Error:" . mysqli_error());
 $result = mysqli_query($condb, $query); 
 
 //echo $query;
-echo '<h4>::รายงานยอดขายภาพรวม::</h4>';
+// echo '<h4>::รายงานยอดขายภาพรวม::</h4>';
 echo "<table id='example1' class='display table table-bordered table-hover'>";
 //หัวข้อตาราง
 echo "
@@ -24,9 +24,11 @@ echo "
 <th width='5%' id='hd'><center>view</center></th>
 </tr>
 </thead>";
+$i=1;
 while($row = mysqli_fetch_array($result)) { 
   echo "<tr>";
-  echo "<td align='center'>" .$row["auction_id"] .'.'."</td> "; 
+  echo "<td align='center'>" .$i.'.'."</td> ";
+  // echo "<td align='center'>" .$row["auction_id"] .'.'."</td> "; 
   echo "<td>" 
   .$row["product_name"]
   .'<br>'
@@ -40,10 +42,11 @@ while($row = mysqli_fetch_array($result)) {
   ."</td> ";
   echo "<td align='right'>" .number_format($row["trans_price"],2) ."</td> "; 
   echo "<td align='center' id='hd'>";
-     echo "<a href='pay.php?auction_id=$row[auction_id]&act=showslip&p=$row[product_price_bid]&do=payform' class='btn btn-success btn-xs' target='_blank'>เปิดดู</a>";
+     echo "<a href='../bid_history.php?auction_id=$row[auction_id]&act=showslip&p=$row[product_price_bid]&do=payform' class='btn btn-success btn-xs' target='_blank'>เปิดดู</a>";
     echo "</td>";
   echo "</tr>";
   $ptotal  += $row["trans_price"];
+  $i++;
 }
 echo  "<tr class='info'>";
 echo "<td>รวม</td>";

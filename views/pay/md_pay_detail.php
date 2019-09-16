@@ -19,6 +19,7 @@ $cus_cus_email=$row1['cus_email'];
 $u_cusid=$row1['cus_id'];
 
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -185,7 +186,7 @@ or die("Error:" . mysqli_error());
 $results = mysqli_query($condb, $querys);
 $rowsl = mysqli_fetch_array($results);
 extract($rowsl);
-//print_r($rowsl);
+// print_r($row1);
 echo "<table  class='table table-bordered table-hover'>";
   //หัวข้อตาราง
   echo "
@@ -225,9 +226,18 @@ echo "</table>";
 ?>
 <hr>
 <div style="background-color: #c9ecf2; padding: 20px;">
-  <h4>แสดงข้อมูลการชำระเงินค่าสินค้า</h4>
+  <h4>แสดงข้อมูลการชำระเงินค่าสินค้า</h4> <br>
   <form class="form-horizontal" method="post" action="mb_pay_save_postcode.php" enctype="multipart/form-data">
-    <div class="form-group">
+  <div class="form-group">
+      <div class="col-sm-2">
+        <b>ที่อยู่</b>
+      </div>
+      <div class="col-sm-3">
+        <b> <?php echo $row1['cus_address'];?> </b>
+    </div>
+  </div>
+<br>
+  <div class="form-group">
       <div class="col-sm-2">
         <b>คุณเลือกวิธีส่งสินค้า</b>
       </div>
