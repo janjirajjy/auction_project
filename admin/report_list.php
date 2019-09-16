@@ -11,7 +11,7 @@ or die("Error:" . mysqli_error());
 $result = mysqli_query($condb, $query); 
 
 //echo $query;
-// echo '<h4>::รายงานยอดขายภาพรวม::</h4>';
+echo '<h4>รายงานยอดขายภาพรวม</h4><br>';
 echo "<table id='example1' class='display table table-bordered table-hover'>";
 //หัวข้อตาราง
 echo "

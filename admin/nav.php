@@ -11,7 +11,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php">หน้าหลัก</a>
+      <a class="navbar-brand" href="index.php">E_Auction</a>
 
     </div>
     <div class="mobile-only-nav pull-right">

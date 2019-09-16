@@ -29,7 +29,7 @@ error_reporting(E_ALL);
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>เข้าสู่ระบบ</title>
+    <title>E_Auction</title>
     <meta name="description" content="Elmer is a Dashboard & Admin Site Responsive Template by hencework." />
     <meta name="keywords"
         content="admin, admin dashboard, admin template, cms, crm, Elmer Admin, Elmeradmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
@@ -96,7 +96,7 @@ while ($row = mysqli_fetch_array($result)) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../welcome.php">ประมูลสินค้า</a>
+                <a class="navbar-brand" href="../welcome.php">E_Auction</a>
 
             </div>
             <div class="mobile-only-nav pull-right">

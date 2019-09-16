@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>เข้าสู่ระบบ</title>
+    <title>E_Auction</title>
     <meta name="description" content="Elmer is a Dashboard & Admin Site Responsive Template by hencework." />
     <meta name="keywords"
         content="admin, admin dashboard, admin template, cms, crm, Elmer Admin, Elmeradmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
@@ -74,16 +74,16 @@ while ($row = mysqli_fetch_array($result)) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="welcome.php">ประมูลสินค้า</a>
+                <a class="navbar-brand" href="welcome.php">E_Auction</a>
 
             </div>
             <div class="mobile-only-nav pull-right">
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav" id="navlink" style="float:right">
-                        <li><a href="../views/cart/mb_cart.php">รถเข็น</a></li>
+                        <!-- <li><a href="../views/cart/mb_cart.php">รถเข็น</a></li> -->
                         <!-- <li><a href="about.php">เกี่ยวกับ</a></li> -->
                         <!-- <li><a href="index.php">ประมูล</a></li> -->
-                        <li><a href="win.php/">ชนะประมูล</a></li>
+                        <!-- <li><a href="win.php/">ชนะประมูล</a></li> -->
                         <!-- <li><a href="bank.php">การชำระเงิน</a></li> -->
                         <!-- <li><a href="signup.php">สมัครสมาชิก</a></li> -->
 
